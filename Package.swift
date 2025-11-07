@@ -1,4 +1,4 @@
-// swift-tools-version:5.9
+// swift-tools-version:6.0
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -29,7 +29,10 @@ let package = Package(
             dependencies: [
                 .product(name: "Segment", package: "analytics-swift")
             ],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            swiftSettings: [
+                .enableExperimentalFeature("strictConcurrency")
+            ]
         )
         // TESTS ARE HANDLED VIA THE EXAMPLE APP.
     ]
