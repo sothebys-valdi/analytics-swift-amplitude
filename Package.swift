@@ -29,7 +29,10 @@ let package = Package(
             dependencies: [
                 .product(name: "Segment", package: "analytics-swift")
             ],
-            resources: [.process("Resources")]
+            resources: [.process("Resources")],
+            swiftSettings: [
+                .enableExperimentalFeature("strictConcurrency")
+            ]
         )
         // TESTS ARE HANDLED VIA THE EXAMPLE APP.
     ]
